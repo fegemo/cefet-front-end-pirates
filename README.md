@@ -351,6 +351,7 @@ FAQ é uma sigla para _Frequently Asked Questions_ que, em Português, traduz
 em **Perguntas Feitas com Frequência**. A seguir, veja algumas questões que
 podem surgir ao fazer este exercício, bem como as suas respostas.
 
+<<<<<<< HEAD
 ### Por quê devo dar o nome de `index.php` ao meu arquivo?
 
 Um arquivo `.php` é um arquivo HTML que é preprocessado pelo Apache em busca de
@@ -389,3 +390,18 @@ abra o **"arquivo _hosts_"** do computador:
 - No Windows, ele costuma ficar em: `C:\windows\system32\drivers\etc\hosts`
   (abra-o com o notepad++, por exemplo)
 - No Ubuntu: `/etc/hosts` (abra-o com o gedit, por exemplo)
+=======
+### Por quê devo dar o nome de `index.html` ao meu arquivo?
+
+Quando temos um website composto por várias páginas, uma delas precisa ser **a página inicial**. O navegador entende que, se existe um arquivo com o nome `index.html`, ele é a página inicial do site.
+
+
+### O que significa `rgba(...)`?
+
+Qualquer cor para o computador é uma combinação ("mistura") de vermelho (_red_),
+verde (_green_) e azul (_blue_).
+
+Quando usamos `rgba(...)` podemos especificar uma cor a partir de suas componentes _red_, _green_ e _blue_, bem como o seu nível de opacidade, que chamamos de _alpha_.
+
+Os valores de R, G e B vão de 0 a 255 e o valor de _alpha_ vai de 0 a 1. Experimente descobrir novas cores usando `rgba()`!
+>>>>>>> 4fbaf33 (After simplification, sln to exercise)
