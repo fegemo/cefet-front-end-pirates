@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Piratas e seus Tesouros 👑
+=======
+# cefet-front-end-pirates
+>>>>>>> 4fbaf33 (After simplification, sln to exercise)
 
 Controlando o estoque de tesouros de Barba-Ruiva.
 
