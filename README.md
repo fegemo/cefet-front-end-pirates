@@ -11,6 +11,7 @@ tesouros seguindo os passos descritos a seguir.
 
 ### Exercício 1: _setup_ e estrutura básica
 
+<<<<<<< HEAD
 1. [Baixe as imagens e o ícone][seminal] que serão usados
 1. Descompacte o arquivo `cefet-front-end-pirates-main.zip` na área de trabalho
    - Isto criará uma pasta com o nome `cefet-front-end-pirates-main` lá
