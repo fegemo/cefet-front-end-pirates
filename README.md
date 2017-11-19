@@ -1,9 +1,15 @@
 # Tesouros 👑 de Piratas **Dinâmicos**
 
 Baixe aqui o [código seminal][seminal] desta atividade. Controlando o estoque de
+<<<<<<< HEAD
 tesouros de Barba-Ruiva x2, com Apache, PHP e MySQL. Este é o resultado final:
+=======
+tesouros de Barba-Ruiva x2, com Apache, PHP e MySQL.
+>>>>>>> c55d2e7 (Started creating the first php exercise)
 
 ![Resultado final da atividade prática](docs/resultado-final.jpg)
+
+[seminal]: https://github.com/fegemo/cefet-front-end-pirates/archive/main-php.zip
 
 [seminal]: https://github.com/fegemo/cefet-front-end-pirates/archive/main-php.zip
 
@@ -281,6 +287,63 @@ usando o separador de milhar com o caractere "." (ponto).
 
 ![](docs/resultado-formatacao.png)
 
+Use o arquivo `banco-dos-tesouros.sql` que veio com o código seminal quando
+o tutorial instruir você a carregar o _script_ que cria a tabela `tesouros`
+no banco de dados que você está criando.
+
+[tutorial-phpmyadmin]: DAKHFAKDSHFKASHDFKJADLK
+[tutorial-banco-de-dados]: IRUAHEIUFHAIFUHEAIHEAIEH
+
+
+### Exercício 4: lendo tesouros do banco de dados
+
+Neste exercício você vai alterar o `index.php` para ler os tesouros do
+banco de dados, em vez de deixá-los fixos na página.
+
+Para isso, você deve primeiramente instruir o PHP para conectar com o
+banco de dados. Coloque no topo do seu arquivo `index.php`, antes
+mesmo do `<!DOCTYPE html>`:
+
+```php
+<?php
+  // faz a conexão com o banco de dados
+  //                    endereço    usuario  senha   nome do banco
+  $db = mysqli_connect("localhost", "root", "123456", "piratas");
+  $db->set_charset("utf8");
+
+  // verifica se a conexão funcionou...
+  if (!$db) {
+    // encerra a execução do script php, dando um erro
+    $descricaoErro = "Erro: não foi possível conectar ao banco de dados. ";
+    $descricaoErro = $descricaoErro . "Detalhes: " . mysqli_connect_error();
+    die($descricaoErro);
+  }
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  ...
+```
+
+Recarregue a página e certifique-se de que ela continua idêntica. Se tiver
+dado algum erro ao conectar ao banco de dados, ele será exibido no
+navegador e deve ser corrigido (talvez a senha esteja errada, por exemplo).
+
+Agora, você deve escrever código PHP para fazer uma **consulta na tabela
+`tesouros`** para pegar todos os tesouros.
+
+
+// CONTINUAR DAQUI....
+
+### Exercício 5: total de cada tesouro
+
+### Desafio 1: total geral dos tesouros
+
+### Desafio 2: formatando números
+
+### Desafio 3: cadastrando um novo tesouro no banco de dados
+
+### Desafio 4: acessando o MySQL no computador ao lado
 
 ## FAQ
 
