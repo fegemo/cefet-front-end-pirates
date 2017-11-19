@@ -1,159 +1,155 @@
-# Piratas e seus Tesouros 👑
+# Tesouros 👑 de Piratas **Dinâmicos**
 
-Controlando o estoque de tesouros de Barba-Ruiva.
+Baixe aqui o [código seminal][seminal] desta atividade. Controlando o estoque de
+tesouros de Barba-Ruiva x2, com Apache, PHP e MySQL.
 
 ![Resultado final da atividade prática](https://fegemo.github.io/cefet-front-end/images/piratas-e-seus-tesouros.png)
 
+[seminal]: https://github.com/fegemo/cefet-front-end-pirates/archive/main-php.zip
+
 ## Atividade
 
-Crie uma página para ajudar o temido Barba-Ruiva a visualizar o seu estoque de
-tesouros seguindo os passos descritos a seguir.
+Você deve alterar a página estática com os tesouros do temido Barba-Ruiva e
+torná-la dinâmica, carregando os tesouros a partir de um banco de dados em vez
+de simplesmente colocá-los no arquivo HTML.
 
-### Exercício 1: _setup_ e estrutura básica
+Objetivos:
+1. Introduzir o conceito de _back-ends_
+1. Conhecer o Apache
+1. Conhecer PHP
+1. Conhecer o MySQL
+1. Criar uma página dinâmica
 
-<<<<<<< HEAD
-1. [Baixe as imagens e o ícone][seminal] que serão usados
-1. Descompacte o arquivo `cefet-front-end-pirates-main.zip` na área de trabalho
-   - Isto criará uma pasta com o nome `cefet-front-end-pirates-main` lá
-1. **Renomeie** a pasta criada na área de trabalho para `tesouro-piratas`
-1. **Crie um arquivo `index.html`** na mesma pasta e siga os passos:
-   - Por que dar o nome de `index.html`?
-     - Veja o [FAQ](#faq)
+### Exercício 1: usando Apache como um servidor estático
 
-Agora, você deve (a) criar a estrutura básica do documento HTML (`DOCTYPE`,
-_tags_ HTML, HEAD, BODY vazias), (b) colocar um título da página na aba do
-navegador e (c) colocar a imagem `calice.ico` como ícone.
+Primeiramente, **ative o WampServer** para que ele inicialize o servidor Apache
+no seu computador. Siga o [tutorial][tutorial-wamp-decom] para fazer isso
+nos computadores do laboratório do DECOM.
 
-Teste a sua página, abrindo-a no navegador.
+Após baixar o código seminal do trabalho, (a) **descompacte-o** na área de
+trabalho, (b) **renomeie a pasta** para `piratas`, (c) crie uma
+**pasta `piratas`** dentro do diretório `www` do WampServer¹ e (d) **mova a
+pasta `piratas`** para dentro desse diretório (do `www`).
 
-[seminal]: https://github.com/fegemo/cefet-front-end-pirates/archive/main.zip
+Agora, (e) abra um navegador e **acesse `http://localhost/piratas/`²** para
+ver a tradicional página dos tesouros do Barba-Ruiva.
 
+Repare que não estamos usando PHP nem MySQL ainda. O Apache está simplesmente
+servindo (_i.e._, entregando) os arquivos HTML, CSS, imagens etc sem fazer
+nenhuma modificação neles.
 
-## Exercício 2: título, parágrafo e fundo
+Por fim, (f) **renomeie** o arquivo `index.html` **para `index.php`** e
+acesse o site novamente (`http://localhost/piratas/`). O que mudou?
 
-Ao fazer este exercício, fique conferindo, no navegador, como a página está ficando.
-
-1. Coloque o **título (`h1`) e o parágrafo**, deixando espaço para a tabela
-   - Conteúdo do parágrafo (para copiar e colar): _"Yarr Harr, marujo! Aqui é o temido Barba-Ruiva e você deve me ajudar
-     a contabilizar os espólios das minhas aventuras!"_ (sem as áspas)
-   - Estilize-os:
-     - Remova a margem superior do título `h1` (_i.e._, defina-a como `0`)
-     - Coloque uma cor legal para o texto (usei `gold`)
-     - Coloque uma sombra no texto (usei uma preta, deslocada 2px para direita e para baixo)
-1. Coloque a imagem de fundo no `body`
-   - Deixe-a ancorada no canto esquerdo inferior (`left bottom`)
-     - Motivo: o Barba-Ruiva está nesse mesmo canto, então, se ancorarmos por lá, ele estará sempre visível na página, independente do tamanho da janela do navegador
-   - Faça-a cobrir todo o espaço disponível (`cover`)
-   - Por que a imagem de fundo ficou só lá em cima?
-     - Veja o [slide "Ocupando toda a altura do navegador"](https://fegemo.github.io/cefet-front-end/classes/html3/#ocupando-toda-altura-navegador) da aula
-1. Alinhe o texto do corpo da página (_i.e._, `body`) de [forma centralizada][alinhamento-texto]
-1. Coloque uma margem na página inteira (_i.e._, no `body`), de `0%`  vertical e `25%` horizontal. A propriedade fica assim:
-   ```
-   margin: 0% 25%;
-   ```
-   ... que é o mesmo que:
-   ```
-   margin: 0% 25% 0% 25%;
-   ```
-   ... ou então:
-   ```
-   margin-top: 0%;
-   margin-right: 25%;
-   margin-bottom: 0%;
-   margin-left: 25%;
-   ```
-   - Eu sempre prefiro a forma mais curta (a primeira), quando as margens laterais (esquerda e direita) são iguais e as verticais também (cima e baixo) :wink:
+Visualmente, nada foi alterado. Mas, agora, o Apache varreu o arquivo
+`index.php` em busca de _tags_ do PHP (_i.e._, as `<?php ... ?>`) para
+executá-las antes de entregar o arquivo para o navegador. Como ainda não há
+nenhuma _tag_, o resultado foi idêntico ao anterior.
 
 
+¹: Normalmente o Wamp é instalado na pasta `C:\wamp`. Logo, procure
+pelo diretório `C:\wamp\www\` e coloque a pasta `piratas` lá dentro.
 
-[alinhamento-texto]: https://fegemo.github.io/cefet-front-end/classes/html1/#css-alinhamentoTexto
+²: Se você não sabe o que significa `localhost` e é curioso, leia sobre isso
+no FAQ.
 
-## Exercício 3: a **tabela**
+[tutorial-wamp-decom]: AKDJFALKJDFLKAJDFLJDALKJFLAKJFDAL
 
-1. Crie a **estrutura básica da tabela** com a _tag_ `table` e as _tags_ `caption`, `thead`, `tbody` e `tfoot` vazias
-   1. A legenda deve conter: _"Estes são os tesouros acumulados do Barba-Ruiva em suas aventuras"_ (sem as áspas)
-1. Crie o cabeçalho, dentro da _tag_ `thead`
-   - O cabeçalho contém apenas 1 linha (`tr`)
-   - Lembre-se que usamos `th` para definir as colunas/células dentro da `tr` do `thead`
-   - Coloque 5 colunas, nesta ordem:
-     1. Tesouro
-     1. Nome
-     1. Valor unitário
-     1. Quantidade
-     1. Valor total
-1. Crie o corpo da tabela, linha por linha
-   - **Dica**: assim que fizer a primeira linha, copie e cole-a outras 3 vezes (porque são 4 tesouros ao todo)
-   - Os tesouros são:
-     1. Moedas:
-        - Imagem do baú em: `imgs/moedas.png`
-        - Nome: Moedas de ouro
-        - Valor unitário: 10
-        - Quantidade: 835
-        - Valor total: 8.350
-     1. Coroas:
-        - Imagem do baú em: `imgs/coroa.png`
-        - Nome: Coroas
-        - Valor unitário: 210
-        - Quantidade: 4
-        - Valor total: 840
-     1. Cálices:
-        - Imagem do baú em: `imgs/calice.png`
-        - Nome: Cálices de ouro
-        - Valor unitário: 4.500
-        - Quantidade: 1
-        - Valor total: 4.500
-     1. Barris:
-        - Imagem do baú em: `imgs/rum.png`
-        - Nome: Barris de rum
-        - Valor unitário: não tem preço
-        - Quantidade: 7
-        - Valor total: -
-1. Crie o rodapé, contendo 1 linha. Essa linha deve possuir apenas 2 células/colunas, sendo que **a primeira deve ocupar 4 colunas** (_i.e._, mescle-as)
-1. Centralize a tabela
-   - Basta definir as margens laterais como tendo "tamanho automático":
-     ```css
-     table {
-       margin-left: auto;
-       margin-right: auto;
-     }
-     ```
-1. Estilize a legenda (`caption`) de forma a torná-la mais legível
-   - Eu usei um fundo branco 70% opaco, tanto nela quanto no parágrafo
-     - (Se você quiser...) Para que uma regra se aplique a mais de um elemento, basta, no seletor, separar os elementos por vírgula, _e.g._:
-       ```css
-       caption, p {
-         background-color: rgba(255, 255, 255, .7);
-       }
-       ```
-   - Além de torna-la legível, reduza um pouco o tamanho da sua fonte em relação ao restante do texto
-     - Eu usei um `font-size: 75%`
-1. Estilize a tabela de forma que ela fique mais bonita, tipo a da imagem fornecida lá em cima
-   - Não se esqueça do `border-collapse: collapse` na `table` para poder definir as bordas
-   - Use um espaçamento interno para dar mais espaço às células da tabela, deixando-as mais "arejadas"
-     - Eu usei:
-       ```css
-       td, th {
-         padding: 3px 10px;        
-       }
-       ```
-       ... que é a mesma coisa que:
-       ```css
-       td, th {
-         padding: 3px 10px 3px 10px;        
-       }
-       ```
-       ... e que é a mesma coisa que:
-       ```css
-       td, th {
-         padding-top: 3px;
-         padding-right: 10px;
-         padding-bottom: 3px;
-         padding-left: 10px;        
-       }
-       ```
-   - Usei as cores de fundo `lightgreen` e `lightsteelblue` para o cabeçalho e rodapé, respectivamente (mas você pode escolher outras)
-   - Coloque bordas finas (_i.e._, de 1px) no cabeçalho e no rodapé
 
+### Exercício 2: escrevendomeuprimeirophp
+
+Agora vamos escrever seu nome no arquivo `index.php` usando
+[o comando `echo`][php-echo] do PHP. Dentro do título
+`<h1>Gerenciador de Tesouros</h1>`, **coloque uma _tag_ PHP para escrever
+seu nome**, de forma que fique assim:
+`<h1>Gerenciador de tesouros (by SEU NOME)</h1>`.
+
+Uma _tag_ PHP é delimitada por `<?php //... ?>`, que também pode ser
+escrita assim: `<? //... ?>` (sem o `php` na abertura).
+
+O comando `echo` recebe 01 parâmetro e simplesmente escreve alguma coisa
+dentro do arquivo HTML. Por exemplo:
+
+```php
+...
+<body>
+  <h1>
+    Olá! Seja bem vindo, <?php echo "Pirata"; ?>!
+  </h1>
+  ...
+</body>
+</html>
+```
+
+É possível chamar o [`echo`][php-echo] usando parênteses ou sem parênteses
+(como feito acima).
+
+[php-echo]: http://php.net/manual/en/function.echo.php
+
+### Exercício 3: criando o banco de dados dos tesouros
+
+Agora, você deve criar o banco de dados para guardar os tesouros dos piratas.
+Para isso, siga o [tutorial de como acessar o phpMyAdmin][tutorial-phpmyadmin]
+e, depois, siga o
+[tutorial para criar o banco de dados][tutorial-banco-de-dados] que vamos usar.
+
+Use o arquivo `banco-dos-tesouros.sql` que veio com o código seminal quando
+o tutorial instruir você a carregar o _script_ que cria a tabela `tesouros`
+no banco de dados que você está criando.
+
+[tutorial-phpmyadmin]: DAKHFAKDSHFKASHDFKJADLK
+[tutorial-banco-de-dados]: IRUAHEIUFHAIFUHEAIHEAIEH
+
+
+### Exercício 4: lendo tesouros do banco de dados
+
+Neste exercício você vai alterar o `index.php` para ler os tesouros do
+banco de dados, em vez de deixá-los fixos na página.
+
+Para isso, você deve primeiramente instruir o PHP para conectar com o
+banco de dados. Coloque no topo do seu arquivo `index.php`, antes
+mesmo do `<!DOCTYPE html>`:
+
+```php
+<?php
+  // faz a conexão com o banco de dados
+  //                    endereço    usuario  senha   nome do banco
+  $db = mysqli_connect("localhost", "root", "123456", "piratas");
+  $db->set_charset("utf8");
+
+  // verifica se a conexão funcionou...
+  if (!$db) {
+    // encerra a execução do script php, dando um erro
+    $descricaoErro = "Erro: não foi possível conectar ao banco de dados. ";
+    $descricaoErro = $descricaoErro . "Detalhes: " . mysqli_connect_error();
+    die($descricaoErro);
+  }
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  ...
+```
+
+Recarregue a página e certifique-se de que ela continua idêntica. Se tiver
+dado algum erro ao conectar ao banco de dados, ele será exibido no
+navegador e deve ser corrigido (talvez a senha esteja errada, por exemplo).
+
+Agora, você deve escrever código PHP para fazer uma **consulta na tabela
+`tesouros`** para pegar todos os tesouros.
+
+
+// CONTINUAR DAQUI....
+
+### Exercício 5: total de cada tesouro
+
+### Desafio 1: total geral dos tesouros
+
+### Desafio 2: formatando números
+
+### Desafio 3: cadastrando um novo tesouro no banco de dados
+
+### Desafio 4: acessando o MySQL no computador ao lado
 
 ## FAQ
 
@@ -161,16 +157,52 @@ FAQ é uma sigla para _Frequently Asked Questions_ que, em Português, traduz
 em **Perguntas Feitas com Frequência**. A seguir, veja algumas questões que
 podem surgir ao fazer este exercício, bem como as suas respostas.
 
-### Por quê devo dar o nome de `index.html` ao meu arquivo?
-
-Quando temos um website composto por várias páginas, uma delas precisa ser **a página inicial**. O navegador entende que, se existe um arquivo com o nome `index.html`, ele é a página inicial do site.
+### Por quê devo dar o nome de `index.php` ao meu arquivo?
 
 
-### O que significa `rgba(...)`?
 
-Qualquer cor para o computador é uma combinação ("mistura") de vermelho (_red_),
-verde (_green_) e azul (_blue_).
+### O que é `localhost`?
 
-Quando usamos `rgba(...)` podemos especificar uma cor a partir de suas componentes _red_, _green_ e _blue_, bem como o seu nível de opacidade, que chamamos de _alpha_.
+Quando começamos a falar de redes de computadores (e a Internet é uma rede),
+precisamos de uma forma para atribuir um endereço para cada computador
+(assim como uma casa precisa de um endereço).
 
-Os valores de R, G e B vão de 0 a 255 e o valor de _alpha_ vai de 0 a 1. Experimente descobrir novas cores usando `rgba()`!
+De fato, cada computador possui um endereço IP (_Internet Protocol_), que é
+uma sequência de 4 números de 0 a 255 (na versão IPv4), tipo assim:
+`200.120.0.1`.
+
+Existe um endereço IP especial, que é o `127.0.0.1`, chamado endereço de
+_loopback_ (ou de retorno). Ele representa o próprio computador que o
+está acessando.
+
+Logo, para acessar o Apache executando na nossa própria máquina, podemos abrir
+o navegador e acessar: `http://127.0.0.1/` (teste aí, depois de ativar o Wamp).
+
+Contudo, acessar um computador por seu IP não costuma ser uma boa ideia
+(porque é mais fácil decorar um nome do que uma sequência de 4 números). Logo,
+é possível dar nomes a endereços IP. De fato, por padrão, podemos acessar o
+`127.0.0.1` usando o nome  `localhost`. Assim, acessar `http://127.0.0.1/` é
+equivalente a acessar `http://localhost/` e esta última forma é mais usada que
+a primeira.
+
+Se você tiver curiosidade para saber como associar um nome a um endereço IP,
+abra o **"arquivo _hosts_"** do computador:
+- No Windows, ele costuma ficar em: `C:\windows\system32\drivers\etc\hosts`
+  (abra-o com o notepad++, por exemplo)
+- No Ubuntu: `/etc/hosts` (abra-o com o gedit, por exemplo)
+
+
+### Como descobrir o endereço IP do meu computador na rede local?
+
+Para que outro computador possa acessar o seu, na rede, você deve fornecer a
+ele qual é o endereço IP da sua máquina. Para descobrir, uma possível forma
+é usando um comando no terminal:
+
+- No Windows:
+  ```
+  C:\> ipconfig
+  ```
+- No Linux:
+  ```
+  $ ifconfig
+  ```
