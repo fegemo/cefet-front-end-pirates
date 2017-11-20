@@ -1,16 +1,3 @@
-<?php
-  // faz a conexão com o banco de dados
-  $db = mysqli_connect("localhost", "root", "", "piratas");
-  $db->set_charset("utf8");
-
-  // verifica se a conexão funcionou...
-  if (!$db) {
-    // encerra a execução do script php, dando um erro
-    $descricaoErro = "Erro: não foi possível conectar ao banco de dados. ";
-    $descricaoErro = $descricaoErro . "Detalhes: " . mysqli_connect_error();
-    die($descricaoErro);
-  }
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,12 +7,7 @@
     <link rel="icon" href="calice.ico">
   </head>
   <body>
-    <h1>Gerenciador de Tesouros (by <?php echo "Coutinho" ?>)</h1>
-    <?php
-      // faz uma consulta no banco de dados para pegar todos os tesouros cadastrados
-      $sql = "SELECT * FROM tesouros";
-      $result = $db->query($sql);
-    ?>
+    <h1>Gerenciador de Tesouros</h1>
     <table>
       <caption>Estes são os tesouros acumulados do Barba-Ruiva em suas aventuras</caption>
       <thead>
@@ -50,7 +32,6 @@
           <td><?php echo $tesouro["quantidade"] ?></td>
           <td><?php echo number_format($tesouro["valorUnitario"] * $tesouro["quantidade"], 0, ",", ".") ?></td>
         </tr>
-      <?php } ?>
       </tbody>
       <tfoot>
         <tr>
