@@ -40,9 +40,11 @@
       </thead>
       <tbody>
         <?php
-        $total = 0;
-        foreach ($result as $tesouro) {
-          $total += $tesouro["valorUnitario"] * $tesouro["quantidade"];
+          $totalGeral = 0;
+          // $resultado é o array que vamos percorrer
+          // $tesouroAtual é a variável que contém o elemento atual do array
+          foreach ($resultado as $tesouroAtual) {
+            $totalGeral += $tesouroAtual["quantidade"] * $tesouroAtual["valorUnitario"];
         ?>
         <tr>
           <td><img src="<?php echo $tesouro["icone"] ?>"></td>
@@ -57,8 +59,8 @@
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="4">Total</td>
-          <td><?=number_format($total, 0, ",", ".")?></td>
+          <td colspan="4">Total geral</td>
+          <td><?= $totalGeral ?></td>
         </tr>
       </tfoot>
     </table>
