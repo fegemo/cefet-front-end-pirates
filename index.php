@@ -22,6 +22,11 @@
   </head>
   <body>
     <h1>Gerenciador de Tesouros <?php echo "(by Coutinho)"?></h1>
+    <?php
+      // faz uma consulta no banco de dados para pegar todos os tesouros cadastrados
+      $sql = "SELECT * FROM tesouros";
+      $resultado = $db->query($sql);
+    ?>
     <table>
       <caption>Estes são os tesouros acumulados do Barba-Ruiva em suas aventuras</caption>
       <thead>
@@ -46,6 +51,9 @@
           <td><?php echo $tesouro["quantidade"] ?></td>
           <td><?php echo number_format($tesouro["valorUnitario"] * $tesouro["quantidade"], 0, ",", ".") ?></td>
         </tr>
+        <?php
+          }
+        ?>
       </tbody>
       <tfoot>
         <tr>
