@@ -47,11 +47,11 @@
             $totalGeral += $tesouroAtual["quantidade"] * $tesouroAtual["valorUnitario"];
         ?>
         <tr>
-          <td><img src="<?php echo $tesouro["icone"] ?>"></td>
-          <td><?php echo $tesouro["nome"] ?></td>
-          <td><?php echo number_format($tesouro["valorUnitario"], 0, ",", ".") ?></td>
-          <td><?php echo $tesouro["quantidade"] ?></td>
-          <td><?php echo number_format($tesouro["valorUnitario"] * $tesouro["quantidade"], 0, ",", ".") ?></td>
+          <td><img src="<?= $tesouroAtual["icone"] ?>"></td>
+          <td><?= $tesouroAtual["nome"] ?></td>
+          <td><?= number_format($tesouroAtual["valorUnitario"], 0, ",", ".") ?></td>
+          <td><?= $tesouroAtual["quantidade"] ?></td>
+          <td><?= number_format($tesouroAtual["quantidade"] * $tesouroAtual["valorUnitario"], 0, ",", ".") ?></td>
         </tr>
         <?php
           }
@@ -60,7 +60,7 @@
       <tfoot>
         <tr>
           <td colspan="4">Total geral</td>
-          <td><?= $totalGeral ?></td>
+          <td><?= number_format($totalGeral, 0, ",", ".") ?></td>
         </tr>
       </tfoot>
     </table>
