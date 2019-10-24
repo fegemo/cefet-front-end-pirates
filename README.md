@@ -113,11 +113,11 @@ Agora, você deve criar o banco de dados no MySQL para guardar os tesouros dos
 piratas. Para isso, siga o
 [tutorial de como acessar o phpMyAdmin][tutorial-phpmyadmin] e, depois, siga o
 [tutorial para criar o banco de dados][tutorial-banco-de-dados] que vamos usar.
-Use o nome `banco-dos-piratas` para o banco de dados que está criando.
+Use o nome `banco-dos-tesouros` para o banco de dados que está criando.
 
 Use o arquivo `piratas.sql` que veio com o código seminal quando
 o tutorial instruir você a carregar o _script_ que cria a tabela `tesouros`
-no banco de dados `banco-dos-piratas` que você está criando. Por curiosidade,
+no banco de dados `banco-dos-tesouros` que você está criando. Por curiosidade,
 abra o arquivo `piratas.sql` usando um editor de texto (_e.g._, Notepad++)
 e veja o que há dentro dele. Se ele fizer algum sentido pra você, você
 pode até modificá-lo para, por exemplo, incluir mais alguns tesouros
@@ -130,7 +130,7 @@ no topo do seu arquivo `index.php`, antes mesmo do `<!DOCTYPE html>`:
 <?php
   // faz a conexão com o banco de dados que criamos no MySQL usando o phpMyAdmin
   //                    endereço    usuario  senha   nome do banco
-  $db = mysqli_connect("localhost", "root", "123456", "banco-dos-piratas");
+  $db = mysqli_connect("localhost", "root", "123456", "banco-dos-tesouros");
   $db->set_charset("utf8");
 
   // verifica se a conexão funcionou...
