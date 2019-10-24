@@ -1,11 +1,7 @@
 # Tesouros 👑 de Piratas **Dinâmicos**
 
 Baixe aqui o [código seminal][seminal] desta atividade. Controlando o estoque de
-<<<<<<< HEAD
 tesouros de Barba-Ruiva x2, com Apache, PHP e MySQL. Este é o resultado final:
-=======
-tesouros de Barba-Ruiva x2, com Apache, PHP e MySQL.
->>>>>>> c55d2e7 (Started creating the first php exercise)
 
 ![Resultado final da atividade prática](docs/resultado-final.jpg)
 
