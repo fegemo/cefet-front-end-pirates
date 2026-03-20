@@ -38,8 +38,8 @@ Ao fazer este exercício, fique conferindo, no navegador, como a página está f
    - Estilize-os:
      - Remova a margem superior do título `h1` (_i.e._, defina-a como `0`)
      - Coloque uma cor legal para o texto (usei `gold`)
-     - Coloque uma sombra no texto (usei uma preta, deslocada 2px para direita e para baixo)
-1. Coloque a imagem de fundo no `body`
+     - Coloque uma sombra no texto (usei uma preta, deslocada 2px para direita e para baixo - [slide sobre texto sombreado](https://fegemo.github.io/cefet-front-end/classes/html3/#textos-sombreados))
+1. Coloque a imagem de fundo no `body` (veja [slide sobre imagens de fundo](https://fegemo.github.io/cefet-front-end/classes/html3/#imagem-de-fundo))
    - Deixe-a ancorada no canto esquerdo inferior (`left bottom`)
      - Motivo: o Barba-Ruiva está nesse mesmo canto, então, se ancorarmos por lá, ele estará sempre visível na página, independente do tamanho da janela do navegador
    - Faça-a cobrir todo o espaço disponível (`cover`)
@@ -117,7 +117,7 @@ Ao fazer este exercício, fique conferindo, no navegador, como a página está f
      }
      ```
 1. Estilize a legenda (`caption`) de forma a torná-la mais legível
-   - Eu usei um fundo branco 70% opaco, tanto nela quanto no parágrafo
+   - Eu usei um fundo branco 70% opaco, tanto nela quanto no parágrafo ([slides sobre cores semitransparentes](https://fegemo.github.io/cefet-front-end/classes/html3/#cores-transparentes))
      - (Se você quiser...) Para que uma regra se aplique a mais de um elemento, basta, no seletor, separar os elementos por vírgula, _e.g._:
        ```css
        caption, p {
